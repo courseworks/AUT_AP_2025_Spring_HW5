@@ -433,3 +433,39 @@ bool verifySignature(const std::string& public_key, const std::string& data,
 ```
 
 ---
+
+## **Final Step: How To Test Your Program**
+
+If you want to debug your code, set the `if` statement to `true`. This will allow you to place your debugging code in the designated section. Once you're done with the debugging process, remember to set the `if` statement back to `false` to test your program using the provided `unit-test.cpp`.
+
+```cpp
+#include <gtest/gtest.h>
+
+#include <iostream>
+
+#include "message.h"
+#include "server.h"
+#include "user.h"
+
+int main(int argc, char **argv) {
+	if (true)  // Set to false to run unit-tests
+	{
+		// Debug section: Place your debugging code here
+	} else {
+		::testing::InitGoogleTest(&argc, argv);
+		std::cout << "RUNNING TESTS ..." << std::endl;
+		int ret{RUN_ALL_TESTS()};
+		if (!ret)
+			std::cout << "<<<SUCCESS>>>" << std::endl;
+		else
+			std::cout << "FAILED" << std::endl;
+	}
+	return 0;
+}
+```
+
+<p align="center">
+  <img src="./resource/That_Is_Why.webp" alt="Are Your Really In Charge Here?" style="width: 60%;">
+</p>
+
+**Best Regards, [Hamidi](https://github.com/smhamidi)**
