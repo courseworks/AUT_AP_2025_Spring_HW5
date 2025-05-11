@@ -16,6 +16,10 @@ include_directories(include/)
 add_executable(main
         src/main.cpp
         src/unit_test.cpp
+        src/user.cpp 
+        src/server.cpp 
+        src/message.cpp 
+        src/crypto.cpp 
 )
 
 # Set compiler flags for C++.
